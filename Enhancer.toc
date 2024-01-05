@@ -1,0 +1,14 @@
+## Interface: 11200
+## Title: |cFF0000FFEnhancer|r
+
+## Version: 1.0
+## Notes: Enhancement Shaman Essentials
+## Author: Abstractz
+
+Enhancer.xml
+
+EnhancerBL.xml
+## Credits:
+## - BL logic from EPI by Nyxxis https://github.com/NyxxisTW/
+## - Inspired by Sewlek's Shamaniac.
+## - Thanks to Melbaa for guidance.
