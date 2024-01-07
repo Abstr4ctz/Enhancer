@@ -12,6 +12,10 @@ Create "/enhancer twist" macro and spam to activate.
  (Skip next step if Totem of the Stonebreaker not in bag or equipped)
 - Auto-equip Totem of the Stonebreaker and cast Earth Shock(Rank 1).
 
+Twist Windfury Totem rank 1 mode:  
+Create "/enhancer twistr1" macro and spam to activate.
+- Same as above but WF is rank 1.
+
 Basic mode:  
 Create "/enhancer basic" macro and spam to activate.
 - Water Shield
