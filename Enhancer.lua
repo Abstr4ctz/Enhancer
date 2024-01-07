@@ -495,29 +495,34 @@ function EnhancerTwist()
 
 			end
 
-			 if not hasWaterShield then
+			local playerMana = UnitMana("player")
+			local hasTotemicFocus = GetTalentInfo(3, 5)
+			local hasConvection = GetTalentInfo(1, 1)
+			
+			
+			 if not hasWaterShield and playerMana >= 15 then
                 CastSpellByName("Water Shield")
 
-			elseif not hasStrengthTotem then
+			elseif not hasStrengthTotem and ((hasTotemicFocus and playerMana >= 206) or (not hasTotemicFocus and playerMana >= 275)) then
 				CastSpellByName("Strength of Earth Totem")	
 				hasCastWindfury = false  -- Reset the flag
 
-			elseif not hasNatureResistTotem and not hasCastWindfury and wfTime < windfuryTimeTreshhold and waterTotemCooldown == 0 then	
+			elseif not hasNatureResistTotem and not hasCastWindfury and wfTime < windfuryTimeTreshhold and waterTotemCooldown == 0 and ((hasTotemicFocus and playerMana >= 187) or (not hasTotemicFocus and playerMana >= 250)) then	
 				CastSpellByName("Windfury Totem")
 				timeWFdropped = GetTime()
 				hasCastWindfury = true
 				
-			elseif not hasNatureResistTotem and not hasAgilityTotem and waterTotemCooldown == 0 then	
+			elseif not hasNatureResistTotem and not hasAgilityTotem and waterTotemCooldown == 0 and ((hasTotemicFocus and playerMana >= 232) or (not hasTotemicFocus and playerMana >= 310)) then	
 				CastSpellByName("Grace of Air Totem")
 				hasCastWindfury = false
 				
-			elseif not hasThunderRelic and (hasNatureResistTotem or hasAgilityTotem) and ssRank2Cooldown == 0 then
+			elseif not hasThunderRelic and (hasNatureResistTotem or hasAgilityTotem) and ssRank2Cooldown == 0 and playerMana >= 182 then
 				CastSwapByName("Stormstrike", "Rank 2", "Totem of Crackling Thunder")
 
-			elseif not hasThunderRelic and (hasNatureResistTotem or hasAgilityTotem) and ssRank1Cooldown == 0 then
+			elseif not hasThunderRelic and (hasNatureResistTotem or hasAgilityTotem) and ssRank1Cooldown == 0 and playerMana >= 319 then
 				CastSwapByName("Stormstrike", "Rank 1", "Totem of Crackling Thunder")	
 				
-			elseif shockCooldown == 0 then
+			elseif shockCooldown == 0 and ((hasConvection and playerMana >= 27) or (not hasTotemicFocus and playerMana >= 30)) then
 				local totemStonebreakerPresent = FindItem("Totem of the Stonebreaker")
 				
 				if totemStonebreakerPresent then
@@ -610,26 +615,30 @@ function EnhancerBasic()
 				end
 
 			end
+			
+			local playerMana = UnitMana("player")
+			local hasTotemicFocus = GetTalentInfo(3, 5)
+			local hasConvection = GetTalentInfo(1, 1)
 
-			if not hasWaterShield then
+			if not hasWaterShield and playerMana >= 15 then
 				CastSpellByName("Water Shield")
 
-			elseif not hasStrengthTotem then
+			elseif not hasStrengthTotem and ((hasTotemicFocus and playerMana >= 206) or (not hasTotemicFocus and playerMana >= 275)) then
 				CastSpellByName("Strength of Earth Totem")	
 				hasCastWindfury = false  -- Reset the flag
 								
-			elseif not hasNatureResistTotem and not hasCastWindfury and wfTime < windfuryTimeTreshhold and waterTotemCooldown == 0 then
+			elseif not hasNatureResistTotem and not hasCastWindfury and wfTime < windfuryTimeTreshhold and waterTotemCooldown == 0 and ((hasTotemicFocus and playerMana >= 187) or (not hasTotemicFocus and playerMana >= 250)) then
 				CastSpellByName("Windfury Totem")
 				timeWFdropped = GetTime()
 				hasCastWindfury = true  -- Set the flag to true after casting "Windfury Totem"
 				
-			elseif not hasThunderRelic and ssRank2Cooldown == 0 then
+			elseif not hasThunderRelic and ssRank2Cooldown == 0 and playerMana >= 182 then
 				CastSwapByName("Stormstrike", "Rank 2", "Totem of Crackling Thunder")
 
-			elseif not hasThunderRelic and ssRank1Cooldown == 0 then
+			elseif not hasThunderRelic and ssRank1Cooldown == 0 and playerMana >= 319 then
 				CastSwapByName("Stormstrike", "Rank 1", "Totem of Crackling Thunder")
 				  
-			elseif shockCooldown == 0 then
+			elseif shockCooldown == 0 and ((hasConvection and playerMana >= 27) or (not hasTotemicFocus and playerMana >= 30)) then
 				local totemStonebreakerPresent = FindItem("Totem of the Stonebreaker")
 				
 				if totemStonebreakerPresent then
