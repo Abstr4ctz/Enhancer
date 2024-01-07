@@ -1,5 +1,5 @@
 # Enhancer
-Enhancement Shaman Essentials
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Vxq9yj2pVWk/0.jpg)](https://www.youtube.com/watch?v=Vxq9yj2pVWk)
 
 One button enhancement shaman rotation including two modes and Bloodlust on whisper.
 
