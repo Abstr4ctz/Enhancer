@@ -20,6 +20,10 @@ Twist Windfury Totem rank 1 mode:
 Create "/enhancer twistr1" macro and spam to activate.
 - Same as above but WF is rank 1.
 
+Twist Nature Resistance Totem mode:  
+Create "/enhancer twistnature" macro and spam to activate.
+- Same as above but NRT.  
+
 Basic mode:  
 Create "/enhancer basic" macro and spam to activate.
 - Water Shield
