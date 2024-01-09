@@ -29,6 +29,10 @@ Create "/enhancer basic" macro and spam to activate.
  (Skip next step if Totem of the Stonebreaker not in bag or equipped)
 - Auto-equip Totem of the Stonebreaker and cast Earth Shock(Rank 1).
 
+Basic Grace of Air mode:  
+Create "/enhancer basicgoa" macro and spam to activate.  
+- Same as above but with Grace of Air.
+
 Totemic Recall:  
 Instead of using Totemic Recall from your spell book, use macro "/enhancer recall".  
 This will cast Totemic Recall and inform addon that it has to start new rotation.
