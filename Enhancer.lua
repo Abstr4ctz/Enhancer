@@ -260,6 +260,14 @@ local function CommandEnhancerBasic(msg, msglower)
 	return false
 end
 
+local function CommandEnhancerBasicGoA(msg, msglower)
+	if (msglower == "enh2GoA" or msglower == "basicGoA") then
+		EnhancerBasicGoA()
+		return true
+	end
+	return false
+end
+
 -- Totemic Recall function
 local function CommandResetWindfury(msg, msglower)
     if (msglower == "recall" or msglower == "totemic recall") then
@@ -779,6 +787,123 @@ function EnhancerBasic()
 
 end
 
+-- Basic rotation
+function EnhancerBasicGoA()
+
+	if isShaman then
+
+		if LazyPig_IsMounted and LazyPig_Dismount and LazyPig_IsMounted() then
+			LazyPig_Dismount()
+		elseif not isCasting then
+		
+			-- Check the cooldown of Stormstrike rank 1 (id 131)
+			local ssRank1Cooldown = GetCooldown(getSpellId("Stormstrike", "Rank 1"))
+
+			-- Check the cooldown of Stormstrike rank 2 (id 132)
+			local ssRank2Cooldown = GetCooldown(getSpellId("Stormstrike", "Rank 2"))
+			
+			-- Check the cooldown of Earth Shock rank 1
+			local shockCooldown = GetCooldown(getSpellId("Earth Shock", "Rank 1"))
+
+			-- Check the cooldown of Water Totems
+			local waterTotemCooldown = GetCooldown(getSpellId("Windfury Totem", "Rank 1"))	
+			
+			local wfTime = 10 - (GetTime() - timeWFdropped)					
+					
+
+			local hasAgilityTotem = false
+			local hasStrengthTotem = false
+			local hasWaterShield = false
+			local hasWaterTotem = false
+			local hasNatureResistTotem = false
+			local hasThunderRelic = false
+			local hasStonebreakerRelic = false
+			local hasCrusaderBuff = false
+			
+			for i = 0, 31 do
+
+				local buffIndex, untilCancelled = GetPlayerBuff(i, "HELPFUL")
+				if buffIndex > -1 then
+
+					local buffTexture = GetPlayerBuffTexture(buffIndex)
+
+					if buffTexture == waterShieldTextureName then
+						hasWaterShield = true
+					end
+
+					if buffTexture == airTotemTextureName then
+						hasAgilityTotem = true
+					end
+
+					if buffTexture == fireTotemTextureName then
+						hasWaterTotem = true
+					end
+
+					if buffTexture == manaTotemTextureName then
+						hasWaterTotem = true
+					end
+
+					if buffTexture == healTotemTextureName then
+						hasWaterTotem = true
+					end
+
+					if buffTexture == earthTotemTextureName then
+						hasStrengthTotem = true
+					end
+
+					if buffTexture == natureTotemTextureName then
+						hasNatureResistTotem = true
+					end
+
+					if buffTexture == ThunderRelicTextureName then
+						hasThunderRelic = true
+					end
+
+					if buffTexture == StonebreakerRelicTextureName then
+						hasStonebreakerRelic = true	
+					end
+					
+					if buffTexture == CrusaderBuffTextureName then
+						hasCrusaderBuff = true	
+					end
+				end
+
+			end
+			
+			local playerMana = UnitMana("player")
+			local hasTotemicFocus = GetTalentInfo(3, 5)
+			local hasConvection = GetTalentInfo(1, 1)
+
+			if not hasWaterShield and playerMana >= 15 then
+				CastSpellByName("Water Shield")
+
+			elseif not hasStrengthTotem and ((hasTotemicFocus and playerMana >= 206) or (not hasTotemicFocus and playerMana >= 275)) then
+				CastSpellByName("Strength of Earth Totem")	
+				hasCastWindfury = false  -- Reset the flag
+				
+			elseif not hasNatureResistTotem and not hasAgilityTotem and waterTotemCooldown == 0 and ((hasTotemicFocus and playerMana >= 232) or (not hasTotemicFocus and playerMana >= 310)) then	
+				CastSpellByName("Grace of Air Totem")
+				hasCastWindfury = false
+				
+			elseif not hasThunderRelic and ssRank2Cooldown == 0 and playerMana >= 182 then
+				CastSwapByName("Stormstrike", "Rank 2", "Totem of Crackling Thunder")
+
+			elseif not hasThunderRelic and ssRank1Cooldown == 0 and playerMana >= 319 then
+				CastSwapByName("Stormstrike", "Rank 1", "Totem of Crackling Thunder")
+				  
+			elseif shockCooldown == 0 and ((hasConvection and playerMana >= 27) or (not hasTotemicFocus and playerMana >= 30)) then
+				local totemStonebreakerPresent = FindItem("Totem of the Stonebreaker")
+				
+				if totemStonebreakerPresent then
+					CastSwapByName("Earth Shock", "Rank 1", "Totem of the Stonebreaker")
+				end
+			end
+		end
+
+	end
+
+end
+
 local overlay = {}
 overlay.index = 1
 overlay.lastUpdated = 0
@@ -789,6 +914,7 @@ SlashCmdList["ENHANCER"] = function(msg)
     if CommandEnhancerTwist(msg, msglower) then return end
 	if CommandEnhancerTwistR1(msg, msglower) then return end
     if CommandEnhancerBasic(msg, msglower) then return end
+	if CommandEnhancerBasicGoA(msg, msglower) then return end
 	if CommandResetWindfury(msg, msglower) then return end
 	if (CommandBL(msg, msglower)) then return end
 	if (CommandShow(msg, msglower)) then return end
