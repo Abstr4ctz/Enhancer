@@ -51,7 +51,11 @@ Important Notice:
 - This addon works by reading your buffs which makes it important that all your own buffs are visible. That's why I recommend using https://github.com/Geigerkind/VCB
 - Placing new Strength of Earth Totem with either mode starts new rotation circle (addon assumes you went out of range of your old totems, recalled them or they expired).
 
+NEW VERSION - YOU DON'T HAVE TO MAKE MACROS, YOU CAN KEYBIND FUNCTIONS DIRECTLY IN ESC > KEY BINDINGS!
+
 To get the most of this addon, use your command macros with added attack command e.g. this macro will attack, use twist rotation and cast bloodlust on whisper:  
 /script if (not PlayerFrame.inCombat) then AttackTarget() end  
 /enhancer twist  
 /enhancer bl
+
+
