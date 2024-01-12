@@ -1031,13 +1031,21 @@ function EnhancerBasicGoA()
 
 end
 
-local function EnhancerRecall()
-	local recallCooldown = GetCooldown(getSpellId("Totemic Recall", ""))
-    if recallCooldown == 0 then
-        CastSpellByName("Totemic Recall")
-        hasCastWindfury = false
-    else
-    end
+function EnhancerRecall()
+	if isShaman then
+
+		if LazyPig_IsMounted and LazyPig_Dismount and LazyPig_IsMounted() then
+			LazyPig_Dismount()
+		elseif not isCasting then
+			local recallCooldown = GetCooldown(getSpellId("Totemic Recall", ""))
+			
+			if recallCooldown == 0 then
+			CastSpellByName("Totemic Recall")
+			hasCastWindfury = false
+			else
+			end
+		end	
+	end	
 end
 
 local overlay = {}
