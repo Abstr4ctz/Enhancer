@@ -9,6 +9,9 @@ local ICONWIDTH, ICONHEIGHT = 65, 65
 local FONTOFFSETY, FONTOFFSETX = 0, 0
 local FONT_SIZE = 33
 
+----- BINDINGS -----
+BINDING_HEADER_ENHANCER = "ENHANCER";
+
 ----- CONSTANTS FOR SPELL AND ITEM TEXTURES -----
 local WFTotemTextureName = "Interface\\Icons\\Spell_Nature_Windfury"
 local airTotemTextureName = "Interface\\Icons\\Spell_Nature_InvisibilityTotem"
@@ -279,12 +282,7 @@ end
 -- Totemic Recall function
 local function CommandResetWindfury(msg, msglower)
     if (msglower == "recall" or msglower == "totemic recall") then
-        local recallCooldown = GetCooldown(getSpellId("Totemic Recall", ""))
-        if recallCooldown == 0 then
-            CastSpellByName("Totemic Recall")
-            hasCastWindfury = false
-        else
-        end
+		EnhancerRecall()
         return true
     end
     return false
@@ -1031,6 +1029,15 @@ function EnhancerBasicGoA()
 
 	end
 
+end
+
+local function EnhancerRecall()
+	local recallCooldown = GetCooldown(getSpellId("Totemic Recall", ""))
+    if recallCooldown == 0 then
+        CastSpellByName("Totemic Recall")
+        hasCastWindfury = false
+    else
+    end
 end
 
 local overlay = {}
