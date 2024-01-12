@@ -1,0 +1,23 @@
+<Bindings>
+	<Binding name="Twist Mode" header="ENHANCER">
+		EnhancerTwist()
+	</Binding>
+	<Binding name="Twist Nature Resistance">
+		EnhancerTwistNature()
+	</Binding>
+	<Binding name="Twist WF rank one">
+		EnhancerTwistR1()
+	</Binding>
+	<Binding name="Basic Mode">
+		EnhancerBasic()
+	</Binding>
+	<Binding name="Basic Agility Totem">
+		EnhancerBasicGoA()
+	</Binding>
+	<Binding name="Cast Bloodlust">
+		EnhancerBloodlust()
+	</Binding>
+	<Binding name="Recall Totems">
+		EnhancerRecall()
+	</Binding>
+</Bindings>
