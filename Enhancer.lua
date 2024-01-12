@@ -779,10 +779,10 @@ function EnhancerTwistNature()
 				CastSpellByName("Nature Resistance Totem")
 				hasCastWindfury = false
 				
-			elseif not hasThunderRelic and (hasNatureResistTotem or hasAgilityTotem) and ssRank2Cooldown == 0 and playerMana >= 182 then
+			elseif not hasThunderRelic and ssRank2Cooldown == 0 and playerMana >= 182 then
 				CastSwapByName("Stormstrike", "Rank 2", "Totem of Crackling Thunder")
 
-			elseif not hasThunderRelic and (hasNatureResistTotem or hasAgilityTotem) and ssRank1Cooldown == 0 and playerMana >= 319 then
+			elseif not hasThunderRelic and ssRank1Cooldown == 0 and playerMana >= 319 then
 				CastSwapByName("Stormstrike", "Rank 1", "Totem of Crackling Thunder")	
 				
 			elseif shockCooldown == 0 and ((hasConvection and playerMana >= 27) or (not hasTotemicFocus and playerMana >= 30)) then
