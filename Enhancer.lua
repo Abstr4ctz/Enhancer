@@ -524,8 +524,10 @@ function EnhancerTwist()
 			local hasTotemicFocus = GetTalentInfo(3, 5)
 			local hasConvection = GetTalentInfo(1, 1)
 			
-			
-			 if not hasWaterShield and playerMana >= 15 then
+			if (not PlayerFrame.inCombat) then 
+				AttackTarget()
+						
+			elseif not hasWaterShield and playerMana >= 15 then
                 CastSpellByName("Water Shield")
 
 			elseif not hasStrengthTotem and ((hasTotemicFocus and playerMana >= 206) or (not hasTotemicFocus and playerMana >= 275)) then
@@ -642,9 +644,11 @@ function EnhancerTwistR1()
 			local playerMana = UnitMana("player")
 			local hasTotemicFocus = GetTalentInfo(3, 5)
 			local hasConvection = GetTalentInfo(1, 1)
+
+			if (not PlayerFrame.inCombat) then 
+				AttackTarget()			
 			
-			
-			 if not hasWaterShield and playerMana >= 15 then
+			elseif not hasWaterShield and playerMana >= 15 then
                 CastSpellByName("Water Shield")
 
 			elseif not hasStrengthTotem and ((hasTotemicFocus and playerMana >= 206) or (not hasTotemicFocus and playerMana >= 275)) then
@@ -762,8 +766,10 @@ function EnhancerTwistNature()
 			local hasTotemicFocus = GetTalentInfo(3, 5)
 			local hasConvection = GetTalentInfo(1, 1)
 			
-			
-			 if not hasWaterShield and playerMana >= 15 then
+			if (not PlayerFrame.inCombat) then 
+				AttackTarget()
+				
+			elseif not hasWaterShield and playerMana >= 15 then
                 CastSpellByName("Water Shield")
 
 			elseif not hasStrengthTotem and ((hasTotemicFocus and playerMana >= 206) or (not hasTotemicFocus and playerMana >= 275)) then
@@ -883,7 +889,10 @@ function EnhancerBasic()
 			local hasTotemicFocus = GetTalentInfo(3, 5)
 			local hasConvection = GetTalentInfo(1, 1)
 
-			if not hasWaterShield and playerMana >= 15 then
+			if (not PlayerFrame.inCombat) then 
+				AttackTarget()
+
+			elseif not hasWaterShield and playerMana >= 15 then
 				CastSpellByName("Water Shield")
 
 			elseif not hasStrengthTotem and ((hasTotemicFocus and playerMana >= 206) or (not hasTotemicFocus and playerMana >= 275)) then
@@ -1000,8 +1009,11 @@ function EnhancerBasicGoA()
 			local playerMana = UnitMana("player")
 			local hasTotemicFocus = GetTalentInfo(3, 5)
 			local hasConvection = GetTalentInfo(1, 1)
+			
+			if (not PlayerFrame.inCombat) then 
+				AttackTarget()
 
-			if not hasWaterShield and playerMana >= 15 then
+			elseif not hasWaterShield and playerMana >= 15 then
 				CastSpellByName("Water Shield")
 
 			elseif not hasStrengthTotem and ((hasTotemicFocus and playerMana >= 206) or (not hasTotemicFocus and playerMana >= 275)) then
