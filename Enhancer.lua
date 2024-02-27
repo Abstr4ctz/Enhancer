@@ -247,9 +247,41 @@ local function CommandEnhancerTwist(msg, msglower)
 	return false
 end
 
+local function CommandEnhancerTwistNoEarth(msg, msglower)
+	if (msglower == "enh1noearth" or msglower == "twistnoearth") then
+		EnhancerTwistNoEarth()
+		return true
+	end
+	return false
+end
+
+local function CommandEnhancerTwistNoEarthNoShock(msg, msglower)
+	if (msglower == "enh1noearthnoshock" or msglower == "twistnoearthnoshock") then
+		EnhancerTwistNoEarthNoShock()
+		return true
+	end
+	return false
+end
+
+local function CommandEnhancerTwistNoShock(msg, msglower)
+	if (msglower == "enh1noshock" or msglower == "twistnoshock") then
+		EnhancerTwistNoShock()
+		return true
+	end
+	return false
+end
+
 local function CommandEnhancerTwistNature(msg, msglower)
 	if (msglower == "nature" or msglower == "twistnature") then
 		EnhancerTwistNature()
+		return true
+	end
+	return false
+end
+
+local function CommandEnhancerTwistNatureNoShock(msg, msglower)
+	if (msglower == "naturenoshock" or msglower == "twistnaturenoshock") then
+		EnhancerTwistNatureNoShock()
 		return true
 	end
 	return false
@@ -263,6 +295,14 @@ local function CommandEnhancerTwistR1(msg, msglower)
 	return false
 end
 
+local function CommandEnhancerTwistR1NoShock(msg, msglower)
+	if (msglower == "enh1r1noshock" or msglower == "twistr1noshock") then
+		EnhancerTwistR1NoShock()
+		return true
+	end
+	return false
+end
+
 local function CommandEnhancerBasic(msg, msglower)
 	if (msglower == "enh2" or msglower == "basic") then
 		EnhancerBasic()
@@ -271,9 +311,89 @@ local function CommandEnhancerBasic(msg, msglower)
 	return false
 end
 
+local function CommandEnhancerBasicNoShock(msg, msglower)
+	if (msglower == "enh2noshock" or msglower == "basicnoshock") then
+		EnhancerBasicNoShock()
+		return true
+	end
+	return false
+end
+
 local function CommandEnhancerBasicGoA(msg, msglower)
 	if (msglower == "enh2goa" or msglower == "basicgoa") then
 		EnhancerBasicGoA()
+		return true
+	end
+	return false
+end
+
+local function CommandEnhancerBasicGoANoShock(msg, msglower)
+	if (msglower == "enh2goanoshock" or msglower == "basicgoanoshock") then
+		EnhancerBasicGoANoShock()
+		return true
+	end
+	return false
+end
+
+local function CommandEnhancerStormStrike(msg, msglower)
+	if (msglower == "enhss" or msglower == "stormstrike") then
+		EnhancerStormStrike()
+		return true
+	end
+	return false
+end
+
+local function CommandFrostShock(msg, msglower)
+	if (msglower == "frostshock") then
+		FrostShock()
+		return true
+	end
+	return false
+end
+
+local function CommandFlameShock(msg, msglower)
+	if (msglower == "flameshock") then
+		FlameShock()
+		return true
+	end
+	return false
+end
+
+local function CommandFlameShockR1(msg, msglower)
+	if (msglower == "flameshockr1") then
+		FlameShockR1()
+		return true
+	end
+	return false
+end
+
+local function CommandMouseoverFlameShockR1(msg, msglower)
+	if (msglower == "mouseoverflameshockr1") then
+		MouseoverFlameShockR1()
+		return true
+	end
+	return false
+end
+
+local function CommandEarthShock(msg, msglower)
+	if (msglower == "earthshock") then
+		EarthShock()
+		return true
+	end
+	return false
+end
+
+local function CommandEarthShockR1(msg, msglower)
+	if (msglower == "earthshockr1") then
+		EarthShockR1()
+		return true
+	end
+	return false
+end
+
+local function CommandMouseoverEarthShockR1(msg, msglower)
+	if (msglower == "mouseoverearthshockr1") then
+		MouseoverEarthShockR1()
 		return true
 	end
 	return false
@@ -420,10 +540,17 @@ local function CommandHelp(msg, msglower, force)
 		Print("-------------- Commands --------------")
 		Print(START_COLOR..COLOR.."/enhancer recall"..END_COLOR.." - use this macro instead of Totemic Recall spell.")
 		Print(START_COLOR..COLOR.."/enhancer twist"..END_COLOR.." - macro to cast Twist rotation.")
+		Print(START_COLOR..COLOR.."/enhancer twistnoearth"..END_COLOR.." - macro to cast Twist rotation without Earth Totem.")
+		Print(START_COLOR..COLOR.."/enhancer twistnoearthnoshock"..END_COLOR.." - macro to cast Twist rotation without Earth Totem and Shock.")
+		Print(START_COLOR..COLOR.."/enhancer twistnoshock"..END_COLOR.." - macro to cast Twist rotation without Shock.")
 		Print(START_COLOR..COLOR.."/enhancer twistr1"..END_COLOR.." - macro to cast Twist rotation with rank one Windfury Totem.")
+		Print(START_COLOR..COLOR.."/enhancer twistr1noshock"..END_COLOR.." - macro to cast Twist rotation with rank one Windfury Totem without Shock.")
 		Print(START_COLOR..COLOR.."/enhancer twistnature"..END_COLOR.." - macro to cast Twist rotation with Nature Resistance Totem.")
+		Print(START_COLOR..COLOR.."/enhancer twistnaturenoshock"..END_COLOR.." - macro to cast Twist rotation with Nature Resistance Totem without Shock.")
 		Print(START_COLOR..COLOR.."/enhancer basic"..END_COLOR.." - macro to cast Basic rotation.")
+		Print(START_COLOR..COLOR.."/enhancer basicnoshock"..END_COLOR.." - macro to cast Basic rotation without Shock.")
 		Print(START_COLOR..COLOR.."/enhancer basicgoa"..END_COLOR.." - macro to cast Basic rotation with Grace of Air Totem.")
+		Print(START_COLOR..COLOR.."/enhancer basicgoanoshock"..END_COLOR.." - macro to cast Basic rotation with Grace of Air Totem without Shock.")
 		Print(START_COLOR..COLOR.."/enhancer bl"..END_COLOR.." - macro to cast Bloodlust.")
 		Print("-------------- Settings --------------")
 		Print(START_COLOR..COLOR.."/enhancer show"..END_COLOR.." - sets status of Bloodlust icon to visible and allows mouse dragging.")
@@ -560,6 +687,349 @@ function EnhancerTwist()
 	end
 end
 
+-- Twist rotation
+function EnhancerTwistNoEarth()
+
+	if isShaman then
+		if LazyPig_IsMounted and LazyPig_Dismount and LazyPig_IsMounted() then
+			LazyPig_Dismount()
+		elseif not isCasting then
+				
+			-- Check the cooldown of Stormstrike rank 1 (id 131)
+			local ssRank1Cooldown = GetCooldown(getSpellId("Stormstrike", "Rank 1"))
+
+			-- Check the cooldown of Stormstrike rank 2 (id 132)
+			local ssRank2Cooldown = GetCooldown(getSpellId("Stormstrike", "Rank 2"))
+			
+			-- Check the cooldown of Earth Shock rank 1
+			local shockCooldown = GetCooldown(getSpellId("Earth Shock", "Rank 1"))
+
+			-- Check the cooldown of Water Totems
+			local waterTotemCooldown = GetCooldown(getSpellId("Windfury Totem", "Rank 1"))			
+			
+			local wfTime = 10 - (GetTime() - timeWFdropped)		
+
+			local hasAgilityTotem = false
+			local hasStrengthTotem = false
+			local hasWaterShield = false
+			local hasWaterTotem = false
+			local hasNatureResistTotem = false
+			local hasThunderRelic = false
+			local hasStonebreakerRelic = false
+			local hasCrusaderBuff = false
+			
+			for i = 0, 31 do
+
+				local buffIndex, untilCancelled = GetPlayerBuff(i, "HELPFUL")
+				if buffIndex > -1 then
+
+					local buffTexture = GetPlayerBuffTexture(buffIndex)
+
+					if buffTexture == waterShieldTextureName then
+						hasWaterShield = true
+					end
+
+					if buffTexture == airTotemTextureName then
+						hasAgilityTotem = true
+					end
+
+					if buffTexture == fireTotemTextureName then
+						hasWaterTotem = true
+					end
+
+					if buffTexture == manaTotemTextureName then
+						hasWaterTotem = true
+					end
+
+					if buffTexture == healTotemTextureName then
+						hasWaterTotem = true
+					end
+
+					if buffTexture == earthTotemTextureName then
+						hasStrengthTotem = true
+					end
+
+					if buffTexture == natureTotemTextureName then
+						hasNatureResistTotem = true
+					end
+
+					if buffTexture == ThunderRelicTextureName then
+						hasThunderRelic = true
+					end
+
+					if buffTexture == StonebreakerRelicTextureName then
+						hasStonebreakerRelic = true	
+					end
+					
+					if buffTexture == CrusaderBuffTextureName then
+						hasCrusaderBuff = true	
+					end
+				end
+
+			end
+
+			local playerMana = UnitMana("player")
+			local hasTotemicFocus = GetTalentInfo(3, 5)
+			local hasConvection = GetTalentInfo(1, 1)
+			
+			if (not PlayerFrame.inCombat) then 
+				AttackTarget()
+						
+			elseif not hasWaterShield and playerMana >= 15 then
+                CastSpellByName("Water Shield")
+
+			elseif not hasNatureResistTotem and not hasCastWindfury and wfTime < windfuryTimeTreshhold and waterTotemCooldown == 0 and ((hasTotemicFocus and playerMana >= 187) or (not hasTotemicFocus and playerMana >= 250)) then	
+				CastSpellByName("Windfury Totem")
+				timeWFdropped = GetTime()
+				hasCastWindfury = true
+				
+			elseif not hasNatureResistTotem and not hasAgilityTotem and waterTotemCooldown == 0 and ((hasTotemicFocus and playerMana >= 232) or (not hasTotemicFocus and playerMana >= 310)) then	
+				CastSpellByName("Grace of Air Totem")
+				hasCastWindfury = false
+				
+			elseif not hasThunderRelic and (hasNatureResistTotem or hasAgilityTotem) and ssRank2Cooldown == 0 and playerMana >= 182 then
+				CastSwapByName("Stormstrike", "Rank 2", "Totem of Crackling Thunder")
+
+			elseif not hasThunderRelic and (hasNatureResistTotem or hasAgilityTotem) and ssRank1Cooldown == 0 and playerMana >= 319 then
+				CastSwapByName("Stormstrike", "Rank 1", "Totem of Crackling Thunder")	
+				
+			elseif shockCooldown == 0 and ((hasConvection and playerMana >= 27) or (not hasTotemicFocus and playerMana >= 30)) then
+				local totemStonebreakerPresent = FindItem("Totem of the Stonebreaker")
+				
+				if totemStonebreakerPresent then
+					CastSwapByName("Earth Shock", "Rank 1", "Totem of the Stonebreaker")
+				end
+			end
+		end	
+	end
+end
+
+-- Twist rotation
+function EnhancerTwistNoEarthNoShock()
+
+	if isShaman then
+		if LazyPig_IsMounted and LazyPig_Dismount and LazyPig_IsMounted() then
+			LazyPig_Dismount()
+		elseif not isCasting then
+				
+			-- Check the cooldown of Stormstrike rank 1 (id 131)
+			local ssRank1Cooldown = GetCooldown(getSpellId("Stormstrike", "Rank 1"))
+
+			-- Check the cooldown of Stormstrike rank 2 (id 132)
+			local ssRank2Cooldown = GetCooldown(getSpellId("Stormstrike", "Rank 2"))
+			
+			-- Check the cooldown of Earth Shock rank 1
+			local shockCooldown = GetCooldown(getSpellId("Earth Shock", "Rank 1"))
+
+			-- Check the cooldown of Water Totems
+			local waterTotemCooldown = GetCooldown(getSpellId("Windfury Totem", "Rank 1"))			
+			
+			local wfTime = 10 - (GetTime() - timeWFdropped)		
+
+			local hasAgilityTotem = false
+			local hasStrengthTotem = false
+			local hasWaterShield = false
+			local hasWaterTotem = false
+			local hasNatureResistTotem = false
+			local hasThunderRelic = false
+			local hasStonebreakerRelic = false
+			local hasCrusaderBuff = false
+			
+			for i = 0, 31 do
+
+				local buffIndex, untilCancelled = GetPlayerBuff(i, "HELPFUL")
+				if buffIndex > -1 then
+
+					local buffTexture = GetPlayerBuffTexture(buffIndex)
+
+					if buffTexture == waterShieldTextureName then
+						hasWaterShield = true
+					end
+
+					if buffTexture == airTotemTextureName then
+						hasAgilityTotem = true
+					end
+
+					if buffTexture == fireTotemTextureName then
+						hasWaterTotem = true
+					end
+
+					if buffTexture == manaTotemTextureName then
+						hasWaterTotem = true
+					end
+
+					if buffTexture == healTotemTextureName then
+						hasWaterTotem = true
+					end
+
+					if buffTexture == earthTotemTextureName then
+						hasStrengthTotem = true
+					end
+
+					if buffTexture == natureTotemTextureName then
+						hasNatureResistTotem = true
+					end
+
+					if buffTexture == ThunderRelicTextureName then
+						hasThunderRelic = true
+					end
+
+					if buffTexture == StonebreakerRelicTextureName then
+						hasStonebreakerRelic = true	
+					end
+					
+					if buffTexture == CrusaderBuffTextureName then
+						hasCrusaderBuff = true	
+					end
+				end
+
+			end
+
+			local playerMana = UnitMana("player")
+			local hasTotemicFocus = GetTalentInfo(3, 5)
+			local hasConvection = GetTalentInfo(1, 1)
+			
+			if (not PlayerFrame.inCombat) then 
+				AttackTarget()
+						
+			elseif not hasWaterShield and playerMana >= 15 then
+                CastSpellByName("Water Shield")
+
+			elseif not hasNatureResistTotem and not hasCastWindfury and wfTime < windfuryTimeTreshhold and waterTotemCooldown == 0 and ((hasTotemicFocus and playerMana >= 187) or (not hasTotemicFocus and playerMana >= 250)) then	
+				CastSpellByName("Windfury Totem")
+				timeWFdropped = GetTime()
+				hasCastWindfury = true
+				
+			elseif not hasNatureResistTotem and not hasAgilityTotem and waterTotemCooldown == 0 and ((hasTotemicFocus and playerMana >= 232) or (not hasTotemicFocus and playerMana >= 310)) then	
+				CastSpellByName("Grace of Air Totem")
+				hasCastWindfury = false
+				
+			elseif not hasThunderRelic and (hasNatureResistTotem or hasAgilityTotem) and ssRank2Cooldown == 0 and playerMana >= 182 then
+				CastSwapByName("Stormstrike", "Rank 2", "Totem of Crackling Thunder")
+
+			elseif not hasThunderRelic and (hasNatureResistTotem or hasAgilityTotem) and ssRank1Cooldown == 0 and playerMana >= 319 then
+				CastSwapByName("Stormstrike", "Rank 1", "Totem of Crackling Thunder")	
+
+			end
+		end	
+	end
+end
+
+-- Twist rotation without shocks
+function EnhancerTwistNoShock()
+
+	if isShaman then
+		if LazyPig_IsMounted and LazyPig_Dismount and LazyPig_IsMounted() then
+			LazyPig_Dismount()
+		elseif not isCasting then
+				
+			-- Check the cooldown of Stormstrike rank 1 (id 131)
+			local ssRank1Cooldown = GetCooldown(getSpellId("Stormstrike", "Rank 1"))
+
+			-- Check the cooldown of Stormstrike rank 2 (id 132)
+			local ssRank2Cooldown = GetCooldown(getSpellId("Stormstrike", "Rank 2"))
+			
+			-- Check the cooldown of Earth Shock rank 1
+			local shockCooldown = GetCooldown(getSpellId("Earth Shock", "Rank 1"))
+
+			-- Check the cooldown of Water Totems
+			local waterTotemCooldown = GetCooldown(getSpellId("Windfury Totem", "Rank 1"))			
+			
+			local wfTime = 10 - (GetTime() - timeWFdropped)		
+
+			local hasAgilityTotem = false
+			local hasStrengthTotem = false
+			local hasWaterShield = false
+			local hasWaterTotem = false
+			local hasNatureResistTotem = false
+			local hasThunderRelic = false
+			local hasStonebreakerRelic = false
+			local hasCrusaderBuff = false
+			
+			for i = 0, 31 do
+
+				local buffIndex, untilCancelled = GetPlayerBuff(i, "HELPFUL")
+				if buffIndex > -1 then
+
+					local buffTexture = GetPlayerBuffTexture(buffIndex)
+
+					if buffTexture == waterShieldTextureName then
+						hasWaterShield = true
+					end
+
+					if buffTexture == airTotemTextureName then
+						hasAgilityTotem = true
+					end
+
+					if buffTexture == fireTotemTextureName then
+						hasWaterTotem = true
+					end
+
+					if buffTexture == manaTotemTextureName then
+						hasWaterTotem = true
+					end
+
+					if buffTexture == healTotemTextureName then
+						hasWaterTotem = true
+					end
+
+					if buffTexture == earthTotemTextureName then
+						hasStrengthTotem = true
+					end
+
+					if buffTexture == natureTotemTextureName then
+						hasNatureResistTotem = true
+					end
+
+					if buffTexture == ThunderRelicTextureName then
+						hasThunderRelic = true
+					end
+
+					if buffTexture == StonebreakerRelicTextureName then
+						hasStonebreakerRelic = true	
+					end
+					
+					if buffTexture == CrusaderBuffTextureName then
+						hasCrusaderBuff = true	
+					end
+				end
+
+			end
+
+			local playerMana = UnitMana("player")
+			local hasTotemicFocus = GetTalentInfo(3, 5)
+			local hasConvection = GetTalentInfo(1, 1)
+			
+			if (not PlayerFrame.inCombat) then 
+				AttackTarget()
+						
+			elseif not hasWaterShield and playerMana >= 15 then
+                CastSpellByName("Water Shield")
+
+			elseif not hasStrengthTotem and ((hasTotemicFocus and playerMana >= 206) or (not hasTotemicFocus and playerMana >= 275)) then
+				CastSpellByName("Strength of Earth Totem")	
+				hasCastWindfury = false  -- Reset the flag
+
+			elseif not hasNatureResistTotem and not hasCastWindfury and wfTime < windfuryTimeTreshhold and waterTotemCooldown == 0 and ((hasTotemicFocus and playerMana >= 187) or (not hasTotemicFocus and playerMana >= 250)) then	
+				CastSpellByName("Windfury Totem")
+				timeWFdropped = GetTime()
+				hasCastWindfury = true
+				
+			elseif not hasNatureResistTotem and not hasAgilityTotem and waterTotemCooldown == 0 and ((hasTotemicFocus and playerMana >= 232) or (not hasTotemicFocus and playerMana >= 310)) then	
+				CastSpellByName("Grace of Air Totem")
+				hasCastWindfury = false
+				
+			elseif not hasThunderRelic and (hasNatureResistTotem or hasAgilityTotem) and ssRank2Cooldown == 0 and playerMana >= 182 then
+				CastSwapByName("Stormstrike", "Rank 2", "Totem of Crackling Thunder")
+
+			elseif not hasThunderRelic and (hasNatureResistTotem or hasAgilityTotem) and ssRank1Cooldown == 0 and playerMana >= 319 then
+				CastSwapByName("Stormstrike", "Rank 1", "Totem of Crackling Thunder")	
+
+			end
+		end	
+	end
+end
+
 -- Twist WF rank 1 rotation
 function EnhancerTwistR1()
 
@@ -676,6 +1146,121 @@ function EnhancerTwistR1()
 				if totemStonebreakerPresent then
 					CastSwapByName("Earth Shock", "Rank 1", "Totem of the Stonebreaker")
 				end
+			end
+		end	
+	end
+end
+
+-- Twist WF rank 1 rotation without shock
+function EnhancerTwistR1NoShock()
+
+	if isShaman then
+		if LazyPig_IsMounted and LazyPig_Dismount and LazyPig_IsMounted() then
+			LazyPig_Dismount()
+		elseif not isCasting then
+				
+			-- Check the cooldown of Stormstrike rank 1 (id 131)
+			local ssRank1Cooldown = GetCooldown(getSpellId("Stormstrike", "Rank 1"))
+
+			-- Check the cooldown of Stormstrike rank 2 (id 132)
+			local ssRank2Cooldown = GetCooldown(getSpellId("Stormstrike", "Rank 2"))
+			
+			-- Check the cooldown of Earth Shock rank 1
+			local shockCooldown = GetCooldown(getSpellId("Earth Shock", "Rank 1"))
+
+			-- Check the cooldown of Water Totems
+			local waterTotemCooldown = GetCooldown(getSpellId("Windfury Totem", "Rank 1"))			
+			
+			local wfTime = 10 - (GetTime() - timeWFdropped)		
+
+			local hasAgilityTotem = false
+			local hasStrengthTotem = false
+			local hasWaterShield = false
+			local hasWaterTotem = false
+			local hasNatureResistTotem = false
+			local hasThunderRelic = false
+			local hasStonebreakerRelic = false
+			local hasCrusaderBuff = false
+			
+			for i = 0, 31 do
+
+				local buffIndex, untilCancelled = GetPlayerBuff(i, "HELPFUL")
+				if buffIndex > -1 then
+
+					local buffTexture = GetPlayerBuffTexture(buffIndex)
+
+					if buffTexture == waterShieldTextureName then
+						hasWaterShield = true
+					end
+
+					if buffTexture == airTotemTextureName then
+						hasAgilityTotem = true
+					end
+
+					if buffTexture == fireTotemTextureName then
+						hasWaterTotem = true
+					end
+
+					if buffTexture == manaTotemTextureName then
+						hasWaterTotem = true
+					end
+
+					if buffTexture == healTotemTextureName then
+						hasWaterTotem = true
+					end
+
+					if buffTexture == earthTotemTextureName then
+						hasStrengthTotem = true
+					end
+
+					if buffTexture == natureTotemTextureName then
+						hasNatureResistTotem = true
+					end
+
+					if buffTexture == ThunderRelicTextureName then
+						hasThunderRelic = true
+					end
+
+					if buffTexture == StonebreakerRelicTextureName then
+						hasStonebreakerRelic = true	
+					end
+					
+					if buffTexture == CrusaderBuffTextureName then
+						hasCrusaderBuff = true	
+					end
+				end
+
+			end
+
+			local playerMana = UnitMana("player")
+			local hasTotemicFocus = GetTalentInfo(3, 5)
+			local hasConvection = GetTalentInfo(1, 1)
+
+			if (not PlayerFrame.inCombat) then 
+				AttackTarget()			
+			
+			elseif not hasWaterShield and playerMana >= 15 then
+                CastSpellByName("Water Shield")
+
+			elseif not hasStrengthTotem and ((hasTotemicFocus and playerMana >= 206) or (not hasTotemicFocus and playerMana >= 275)) then
+				CastSpellByName("Strength of Earth Totem")	
+				hasCastWindfury = false  -- Reset the flag
+
+			elseif not hasNatureResistTotem and not hasCastWindfury and wfTime < windfuryTimeTreshhold and waterTotemCooldown == 0 and ((hasTotemicFocus and playerMana >= 86) or (not hasTotemicFocus and playerMana >= 115)) then	
+				CastSpellByName("Windfury Totem(Rank 1)")
+				timeWFdropped = GetTime()
+				hasCastWindfury = true
+				
+			elseif not hasNatureResistTotem and not hasAgilityTotem and waterTotemCooldown == 0 and ((hasTotemicFocus and playerMana >= 232) or (not hasTotemicFocus and playerMana >= 310)) then	
+				CastSpellByName("Grace of Air Totem")
+				hasCastWindfury = false
+				
+			elseif not hasThunderRelic and (hasNatureResistTotem or hasAgilityTotem) and ssRank2Cooldown == 0 and playerMana >= 182 then
+				CastSwapByName("Stormstrike", "Rank 2", "Totem of Crackling Thunder")
+
+			elseif not hasThunderRelic and (hasNatureResistTotem or hasAgilityTotem) and ssRank1Cooldown == 0 and playerMana >= 319 then
+				CastSwapByName("Stormstrike", "Rank 1", "Totem of Crackling Thunder")	
+
 			end
 		end	
 	end
@@ -802,6 +1387,122 @@ function EnhancerTwistNature()
 	end
 end
 
+-- Twist Nature Resistance Totem
+function EnhancerTwistNatureNoShock()
+
+	if isShaman then
+		if LazyPig_IsMounted and LazyPig_Dismount and LazyPig_IsMounted() then
+			LazyPig_Dismount()
+		elseif not isCasting then
+				
+			-- Check the cooldown of Stormstrike rank 1 (id 131)
+			local ssRank1Cooldown = GetCooldown(getSpellId("Stormstrike", "Rank 1"))
+
+			-- Check the cooldown of Stormstrike rank 2 (id 132)
+			local ssRank2Cooldown = GetCooldown(getSpellId("Stormstrike", "Rank 2"))
+			
+			-- Check the cooldown of Earth Shock rank 1
+			local shockCooldown = GetCooldown(getSpellId("Earth Shock", "Rank 1"))
+
+			-- Check the cooldown of Water Totems
+			local waterTotemCooldown = GetCooldown(getSpellId("Windfury Totem", "Rank 1"))			
+			
+			local wfTime = 10 - (GetTime() - timeWFdropped)		
+
+			local hasAgilityTotem = false
+			local hasStrengthTotem = false
+			local hasWaterShield = false
+			local hasWaterTotem = false
+			local hasNatureResistTotem = false
+			local hasThunderRelic = false
+			local hasStonebreakerRelic = false
+			local hasCrusaderBuff = false
+			
+			for i = 0, 31 do
+
+				local buffIndex, untilCancelled = GetPlayerBuff(i, "HELPFUL")
+				if buffIndex > -1 then
+
+					local buffTexture = GetPlayerBuffTexture(buffIndex)
+
+					if buffTexture == waterShieldTextureName then
+						hasWaterShield = true
+					end
+
+					if buffTexture == airTotemTextureName then
+						hasAgilityTotem = true
+					end
+
+					if buffTexture == fireTotemTextureName then
+						hasWaterTotem = true
+					end
+
+					if buffTexture == manaTotemTextureName then
+						hasWaterTotem = true
+					end
+
+					if buffTexture == healTotemTextureName then
+						hasWaterTotem = true
+					end
+
+					if buffTexture == earthTotemTextureName then
+						hasStrengthTotem = true
+					end
+
+					if buffTexture == natureTotemTextureName then
+						hasNatureResistTotem = true
+					end
+
+					if buffTexture == ThunderRelicTextureName then
+						hasThunderRelic = true
+					end
+
+					if buffTexture == StonebreakerRelicTextureName then
+						hasStonebreakerRelic = true	
+					end
+					
+					if buffTexture == CrusaderBuffTextureName then
+						hasCrusaderBuff = true	
+					end
+				end
+
+			end
+
+			local playerMana = UnitMana("player")
+			local hasTotemicFocus = GetTalentInfo(3, 5)
+			local hasConvection = GetTalentInfo(1, 1)
+			
+			if (not PlayerFrame.inCombat) then 
+				AttackTarget()
+				
+			elseif not hasWaterShield and playerMana >= 15 then
+                CastSpellByName("Water Shield")
+
+			elseif not hasStrengthTotem and ((hasTotemicFocus and playerMana >= 206) or (not hasTotemicFocus and playerMana >= 275)) then
+				CastSpellByName("Strength of Earth Totem")	
+				hasCastWindfury = false  -- Reset the flag
+
+			elseif not hasCastWindfury and wfTime < windfuryTimeTreshhold and waterTotemCooldown == 0 and ((hasTotemicFocus and playerMana >= 187) or (not hasTotemicFocus and playerMana >= 250)) then	
+				CastSpellByName("Windfury Totem")
+				timeWFdropped = GetTime()
+				hasCastWindfury = true
+				
+			elseif not hasNatureResistTotem and waterTotemCooldown == 0 and ((hasTotemicFocus and playerMana >= 135) or (not hasTotemicFocus and playerMana >= 180)) then	
+				CastSpellByName("Nature Resistance Totem")
+				hasCastWindfury = false
+				
+			elseif not hasThunderRelic and ssRank2Cooldown == 0 and playerMana >= 182 then
+				CastSwapByName("Stormstrike", "Rank 2", "Totem of Crackling Thunder")
+
+			elseif not hasThunderRelic and ssRank1Cooldown == 0 and playerMana >= 319 then
+				CastSwapByName("Stormstrike", "Rank 1", "Totem of Crackling Thunder")	
+
+			end
+		end	
+	end
+end
+
+
 -- Basic rotation
 function EnhancerBasic()
 
@@ -923,7 +1624,122 @@ function EnhancerBasic()
 
 end
 
--- Basic rotation
+-- Basic rotation without shock
+function EnhancerBasicNoShock()
+
+	if isShaman then
+
+		if LazyPig_IsMounted and LazyPig_Dismount and LazyPig_IsMounted() then
+			LazyPig_Dismount()
+		elseif not isCasting then
+		
+			-- Check the cooldown of Stormstrike rank 1 (id 131)
+			local ssRank1Cooldown = GetCooldown(getSpellId("Stormstrike", "Rank 1"))
+
+			-- Check the cooldown of Stormstrike rank 2 (id 132)
+			local ssRank2Cooldown = GetCooldown(getSpellId("Stormstrike", "Rank 2"))
+			
+			-- Check the cooldown of Earth Shock rank 1
+			local shockCooldown = GetCooldown(getSpellId("Earth Shock", "Rank 1"))
+
+			-- Check the cooldown of Water Totems
+			local waterTotemCooldown = GetCooldown(getSpellId("Windfury Totem", "Rank 1"))	
+			
+			local wfTime = 10 - (GetTime() - timeWFdropped)					
+					
+
+			local hasAgilityTotem = false
+			local hasStrengthTotem = false
+			local hasWaterShield = false
+			local hasWaterTotem = false
+			local hasNatureResistTotem = false
+			local hasThunderRelic = false
+			local hasStonebreakerRelic = false
+			local hasCrusaderBuff = false
+			
+			for i = 0, 31 do
+
+				local buffIndex, untilCancelled = GetPlayerBuff(i, "HELPFUL")
+				if buffIndex > -1 then
+
+					local buffTexture = GetPlayerBuffTexture(buffIndex)
+
+					if buffTexture == waterShieldTextureName then
+						hasWaterShield = true
+					end
+
+					if buffTexture == airTotemTextureName then
+						hasAgilityTotem = true
+					end
+
+					if buffTexture == fireTotemTextureName then
+						hasWaterTotem = true
+					end
+
+					if buffTexture == manaTotemTextureName then
+						hasWaterTotem = true
+					end
+
+					if buffTexture == healTotemTextureName then
+						hasWaterTotem = true
+					end
+
+					if buffTexture == earthTotemTextureName then
+						hasStrengthTotem = true
+					end
+
+					if buffTexture == natureTotemTextureName then
+						hasNatureResistTotem = true
+					end
+
+					if buffTexture == ThunderRelicTextureName then
+						hasThunderRelic = true
+					end
+
+					if buffTexture == StonebreakerRelicTextureName then
+						hasStonebreakerRelic = true	
+					end
+					
+					if buffTexture == CrusaderBuffTextureName then
+						hasCrusaderBuff = true	
+					end
+				end
+
+			end
+			
+			local playerMana = UnitMana("player")
+			local hasTotemicFocus = GetTalentInfo(3, 5)
+			local hasConvection = GetTalentInfo(1, 1)
+
+			if (not PlayerFrame.inCombat) then 
+				AttackTarget()
+
+			elseif not hasWaterShield and playerMana >= 15 then
+				CastSpellByName("Water Shield")
+
+			elseif not hasStrengthTotem and ((hasTotemicFocus and playerMana >= 206) or (not hasTotemicFocus and playerMana >= 275)) then
+				CastSpellByName("Strength of Earth Totem")	
+				hasCastWindfury = false  -- Reset the flag
+								
+			elseif not hasNatureResistTotem and not hasCastWindfury and wfTime < windfuryTimeTreshhold and waterTotemCooldown == 0 and ((hasTotemicFocus and playerMana >= 187) or (not hasTotemicFocus and playerMana >= 250)) then
+				CastSpellByName("Windfury Totem")
+				timeWFdropped = GetTime()
+				hasCastWindfury = true  -- Set the flag to true after casting "Windfury Totem"
+				
+			elseif not hasThunderRelic and ssRank2Cooldown == 0 and playerMana >= 182 then
+				CastSwapByName("Stormstrike", "Rank 2", "Totem of Crackling Thunder")
+
+			elseif not hasThunderRelic and ssRank1Cooldown == 0 and playerMana >= 319 then
+				CastSwapByName("Stormstrike", "Rank 1", "Totem of Crackling Thunder")
+				  
+			end
+		end
+
+	end
+
+end
+
+-- Basic rotation GoA
 function EnhancerBasicGoA()
 
 	if isShaman then
@@ -1043,6 +1859,315 @@ function EnhancerBasicGoA()
 
 end
 
+-- Basic rotation GoA without Shock
+function EnhancerBasicGoANoShock()
+
+	if isShaman then
+
+		if LazyPig_IsMounted and LazyPig_Dismount and LazyPig_IsMounted() then
+			LazyPig_Dismount()
+		elseif not isCasting then
+		
+			-- Check the cooldown of Stormstrike rank 1 (id 131)
+			local ssRank1Cooldown = GetCooldown(getSpellId("Stormstrike", "Rank 1"))
+
+			-- Check the cooldown of Stormstrike rank 2 (id 132)
+			local ssRank2Cooldown = GetCooldown(getSpellId("Stormstrike", "Rank 2"))
+			
+			-- Check the cooldown of Earth Shock rank 1
+			local shockCooldown = GetCooldown(getSpellId("Earth Shock", "Rank 1"))
+
+			-- Check the cooldown of Water Totems
+			local waterTotemCooldown = GetCooldown(getSpellId("Windfury Totem", "Rank 1"))	
+			
+			local wfTime = 10 - (GetTime() - timeWFdropped)					
+					
+
+			local hasAgilityTotem = false
+			local hasStrengthTotem = false
+			local hasWaterShield = false
+			local hasWaterTotem = false
+			local hasNatureResistTotem = false
+			local hasThunderRelic = false
+			local hasStonebreakerRelic = false
+			local hasCrusaderBuff = false
+			
+			for i = 0, 31 do
+
+				local buffIndex, untilCancelled = GetPlayerBuff(i, "HELPFUL")
+				if buffIndex > -1 then
+
+					local buffTexture = GetPlayerBuffTexture(buffIndex)
+
+					if buffTexture == waterShieldTextureName then
+						hasWaterShield = true
+					end
+
+					if buffTexture == airTotemTextureName then
+						hasAgilityTotem = true
+					end
+
+					if buffTexture == fireTotemTextureName then
+						hasWaterTotem = true
+					end
+
+					if buffTexture == manaTotemTextureName then
+						hasWaterTotem = true
+					end
+
+					if buffTexture == healTotemTextureName then
+						hasWaterTotem = true
+					end
+
+					if buffTexture == earthTotemTextureName then
+						hasStrengthTotem = true
+					end
+
+					if buffTexture == natureTotemTextureName then
+						hasNatureResistTotem = true
+					end
+
+					if buffTexture == ThunderRelicTextureName then
+						hasThunderRelic = true
+					end
+
+					if buffTexture == StonebreakerRelicTextureName then
+						hasStonebreakerRelic = true	
+					end
+					
+					if buffTexture == CrusaderBuffTextureName then
+						hasCrusaderBuff = true	
+					end
+				end
+
+			end
+			
+			local playerMana = UnitMana("player")
+			local hasTotemicFocus = GetTalentInfo(3, 5)
+			local hasConvection = GetTalentInfo(1, 1)
+			
+			if (not PlayerFrame.inCombat) then 
+				AttackTarget()
+
+			elseif not hasWaterShield and playerMana >= 15 then
+				CastSpellByName("Water Shield")
+
+			elseif not hasStrengthTotem and ((hasTotemicFocus and playerMana >= 206) or (not hasTotemicFocus and playerMana >= 275)) then
+				CastSpellByName("Strength of Earth Totem")	
+				hasCastWindfury = false  -- Reset the flag
+				
+			elseif not hasNatureResistTotem and not hasAgilityTotem and waterTotemCooldown == 0 and ((hasTotemicFocus and playerMana >= 232) or (not hasTotemicFocus and playerMana >= 310)) then	
+				CastSpellByName("Grace of Air Totem")
+				hasCastWindfury = false
+				
+			elseif not hasThunderRelic and ssRank2Cooldown == 0 and playerMana >= 182 then
+				CastSwapByName("Stormstrike", "Rank 2", "Totem of Crackling Thunder")
+
+			elseif not hasThunderRelic and ssRank1Cooldown == 0 and playerMana >= 319 then
+				CastSwapByName("Stormstrike", "Rank 1", "Totem of Crackling Thunder")
+
+			end
+		end
+
+	end
+
+end
+
+-- Basic rotation GoA without Shock
+function EnhancerStormStrike()
+
+	if isShaman then
+
+		if LazyPig_IsMounted and LazyPig_Dismount and LazyPig_IsMounted() then
+			LazyPig_Dismount()
+		elseif not isCasting then
+		
+			-- Check the cooldown of Stormstrike rank 1 (id 131)
+			local ssRank1Cooldown = GetCooldown(getSpellId("Stormstrike", "Rank 1"))
+
+			-- Check the cooldown of Stormstrike rank 2 (id 132)
+			local ssRank2Cooldown = GetCooldown(getSpellId("Stormstrike", "Rank 2"))
+			
+			-- Check the cooldown of Earth Shock rank 1
+			local shockCooldown = GetCooldown(getSpellId("Earth Shock", "Rank 1"))
+
+			-- Check the cooldown of Water Totems
+			local waterTotemCooldown = GetCooldown(getSpellId("Windfury Totem", "Rank 1"))	
+			
+			local wfTime = 10 - (GetTime() - timeWFdropped)					
+					
+
+			local hasAgilityTotem = false
+			local hasStrengthTotem = false
+			local hasWaterShield = false
+			local hasWaterTotem = false
+			local hasNatureResistTotem = false
+			local hasThunderRelic = false
+			local hasStonebreakerRelic = false
+			local hasCrusaderBuff = false
+			
+			for i = 0, 31 do
+
+				local buffIndex, untilCancelled = GetPlayerBuff(i, "HELPFUL")
+				if buffIndex > -1 then
+
+					local buffTexture = GetPlayerBuffTexture(buffIndex)
+
+					if buffTexture == waterShieldTextureName then
+						hasWaterShield = true
+					end
+
+					if buffTexture == airTotemTextureName then
+						hasAgilityTotem = true
+					end
+
+					if buffTexture == fireTotemTextureName then
+						hasWaterTotem = true
+					end
+
+					if buffTexture == manaTotemTextureName then
+						hasWaterTotem = true
+					end
+
+					if buffTexture == healTotemTextureName then
+						hasWaterTotem = true
+					end
+
+					if buffTexture == earthTotemTextureName then
+						hasStrengthTotem = true
+					end
+
+					if buffTexture == natureTotemTextureName then
+						hasNatureResistTotem = true
+					end
+
+					if buffTexture == ThunderRelicTextureName then
+						hasThunderRelic = true
+					end
+
+					if buffTexture == StonebreakerRelicTextureName then
+						hasStonebreakerRelic = true	
+					end
+					
+					if buffTexture == CrusaderBuffTextureName then
+						hasCrusaderBuff = true	
+					end
+				end
+
+			end
+			
+			local playerMana = UnitMana("player")
+			local hasTotemicFocus = GetTalentInfo(3, 5)
+			local hasConvection = GetTalentInfo(1, 1)
+			
+			if (not PlayerFrame.inCombat) then 
+				AttackTarget()
+
+			elseif not hasWaterShield and playerMana >= 15 then
+				CastSpellByName("Water Shield")
+
+				
+			elseif not hasThunderRelic and ssRank2Cooldown == 0 and playerMana >= 182 then
+				CastSwapByName("Stormstrike", "Rank 2", "Totem of Crackling Thunder")
+
+			elseif not hasThunderRelic and ssRank1Cooldown == 0 and playerMana >= 319 then
+				CastSwapByName("Stormstrike", "Rank 1", "Totem of Crackling Thunder")
+
+			end
+		end
+
+	end
+
+end
+
+function FrostShock()
+
+	if isShaman then
+		if LazyPig_IsMounted and LazyPig_Dismount and LazyPig_IsMounted() then
+			LazyPig_Dismount()
+		elseif not isCasting then
+				CastSwapByName("Frost Shock", "Rank 4", "Totem of the Stonebreaker")
+		end
+	end
+end
+
+
+function FlameShock()
+
+	if isShaman then
+		if LazyPig_IsMounted and LazyPig_Dismount and LazyPig_IsMounted() then
+			LazyPig_Dismount()
+		elseif not isCasting then
+				CastSwapByName("Flame Shock", "Rank 6", "Totem of the Stonebreaker")
+		end	
+	end
+end
+
+
+function FlameShockR1()
+
+	if isShaman then
+		if LazyPig_IsMounted and LazyPig_Dismount and LazyPig_IsMounted() then
+			LazyPig_Dismount()
+		elseif not isCasting then
+				CastSwapByName("Flame Shock", "Rank 1", "Totem of the Stonebreaker")
+			
+		end	
+	end
+end
+
+function MouseoverFlameShockR1()
+
+	if isShaman then
+		if LazyPig_IsMounted and LazyPig_Dismount and LazyPig_IsMounted() then
+			LazyPig_Dismount()
+		elseif not isCasting then
+				TargetUnit("mouseover")
+				CastSwapByName("Flame Shock", "Rank 1", "Totem of the Stonebreaker")
+				TargetLastTarget()
+		end	
+	end
+		
+end
+
+
+function EarthShock()
+
+	if isShaman then
+		if LazyPig_IsMounted and LazyPig_Dismount and LazyPig_IsMounted() then
+			LazyPig_Dismount()
+		elseif not isCasting then
+				CastSwapByName("Earth Shock", "Rank 7", "Totem of the Stonebreaker")
+		end	
+	end
+end
+
+
+function EarthShockR1()
+
+	if isShaman then
+		if LazyPig_IsMounted and LazyPig_Dismount and LazyPig_IsMounted() then
+			LazyPig_Dismount()
+		elseif not isCasting then
+				CastSwapByName("Earth Shock", "Rank 1", "Totem of the Stonebreaker")
+		end	
+	end
+end
+
+function MouseoverEarthShockR1()
+
+	if isShaman then
+		if LazyPig_IsMounted and LazyPig_Dismount and LazyPig_IsMounted() then
+			LazyPig_Dismount()
+		elseif not isCasting then
+				TargetUnit("mouseover")
+				CastSwapByName("Earth Shock", "Rank 1", "Totem of the Stonebreaker")
+				TargetLastTarget()
+		end	
+	end
+		
+end
+
 function EnhancerRecall()
 	if isShaman then
 
@@ -1068,10 +2193,25 @@ SLASH_ENHANCER1 = "/Enhancer"
 SlashCmdList["ENHANCER"] = function(msg)
     local msglower = strlower(msg)
     if CommandEnhancerTwist(msg, msglower) then return end
+    if CommandEnhancerTwistNoEarth(msg, msglower) then return end
+    if CommandEnhancerTwistNoEarthNoShock(msg, msglower) then return end
+	if CommandEnhancerTwistNoShock(msg, msglower) then return end
 	if CommandEnhancerTwistNature(msg, msglower) then return end
+	if CommandEnhancerTwistNatureNoShock(msg, msglower) then return end
 	if CommandEnhancerTwistR1(msg, msglower) then return end
+	if CommandEnhancerTwistR1NoShock(msg, msglower) then return end
     if CommandEnhancerBasic(msg, msglower) then return end
+    if CommandEnhancerBasicNoShock(msg, msglower) then return end
 	if CommandEnhancerBasicGoA(msg, msglower) then return end
+	if CommandEnhancerBasicGoANoShock(msg, msglower) then return end
+	if CommandEnhancerStormStrike(msg, msglower) then return end
+	if CommandFrostShock(msg, msglower) then return end
+	if CommandFlameShock(msg, msglower) then return end
+	if CommandFlameShockR1(msg, msglower) then return end	
+	if CommandMouseoverFlameShockR1(msg, msglower) then return end	
+	if CommandEarthShock(msg, msglower) then return end
+	if CommandEarthShockR1(msg, msglower) then return end
+	if CommandMouseoverEarthShockR1(msg, msglower) then return end
 	if CommandResetWindfury(msg, msglower) then return end
 	if (CommandBL(msg, msglower)) then return end
 	if (CommandShow(msg, msglower)) then return end

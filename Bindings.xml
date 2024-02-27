@@ -2,8 +2,20 @@
 	<Binding name="Twist Mode" header="ENHANCER">
 		EnhancerTwist()
 	</Binding>
+	<Binding name="Twist Mode without Earth Totem">
+		EnhancerTwistNoEarth()
+	</Binding>
+	<Binding name="Twist Mode no ET and Shock">
+		EnhancerTwistNoEarthNoShock()
+	</Binding>
+	<Binding name="Twist Mode without Shock">
+		EnhancerTwistNoShock()
+	</Binding>
 	<Binding name="Twist Nature Resistance">
 		EnhancerTwistNature()
+	</Binding>
+	<Binding name="Twist NTR without Shock">
+		EnhancerTwistNatureNoShock()
 	</Binding>
 	<Binding name="Twist WF rank one">
 		EnhancerTwistR1()
@@ -11,8 +23,38 @@
 	<Binding name="Basic Mode">
 		EnhancerBasic()
 	</Binding>
+		<Binding name="Basic Mode without Shock">
+		EnhancerBasicNoShock()
+	</Binding>
 	<Binding name="Basic Agility Totem">
 		EnhancerBasicGoA()
+	</Binding>
+		<Binding name="Basic GoA without Shock">
+		EnhancerBasicGoANoShock()
+	</Binding>
+	<Binding name="Just Stormstrike">
+		EnhancerStormStrike()
+	</Binding>
+	<Binding name="Frost Shock">
+		FrostShock()
+	</Binding>
+	<Binding name="Flame Shock">
+		FlameShock()
+	</Binding>
+	<Binding name="Flame Shock(Rank 1)">
+		FlameShockR1()
+	</Binding>
+	<Binding name="Mouseover Flame Shock">
+		MouseoverFlameShockR1()
+	</Binding>
+	<Binding name="Earth Shock">
+		EarthShock()
+	</Binding>
+	<Binding name="Earth Shock(Rank 1)">
+		EarthShockR1()
+	</Binding>
+	<Binding name="Mouseover Earth Shock">
+		MouseoverEarthShockR1()
 	</Binding>
 	<Binding name="Cast Bloodlust">
 		EnhancerBloodlust()
